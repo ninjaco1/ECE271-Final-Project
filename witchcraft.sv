@@ -1,0 +1,2 @@
+//Counter and comparator
+module 
