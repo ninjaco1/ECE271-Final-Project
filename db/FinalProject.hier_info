@@ -1,0 +1,15 @@
+|FinalProject
+clk => ~NO_FANOUT~
+ltch => ~NO_FANOUT~
+data => ~NO_FANOUT~
+led <= <GND>
+motor <= <GND>
+seg[0] <= <GND>
+seg[1] <= <GND>
+seg[2] <= <GND>
+seg[3] <= <GND>
+seg[4] <= <GND>
+seg[5] <= <GND>
+seg[6] <= <GND>
+
+
