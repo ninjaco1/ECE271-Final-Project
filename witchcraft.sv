@@ -1,2 +1,17 @@
-//Counter and comparator
-module 
+module witchcraft #(parameter count2 = 10, M = 4)(input logic clk,
+															output logic [M-1:0] count,
+															output logic vsync_clk);
+	always_ff@(posedge clk)
+		begin
+		if(count + 1'b1 == count2)
+		 begin
+			count <= 0;
+			vsync_clk <= 1;
+		 end
+		else
+		 begin
+		 count <= count + 1'b1;
+		 vsync_clk <= 0;
+		 end
+		end
+endmodule
