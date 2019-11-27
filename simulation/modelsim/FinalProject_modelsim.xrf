@@ -6,6 +6,7 @@ source_file = 1, C:/Users/Khang/Desktop/Final Project/adder.sv
 source_file = 1, C:/Users/Khang/Desktop/Final Project/substractor.sv
 source_file = 1, C:/Users/Khang/Desktop/Final Project/sevenseg.sv
 source_file = 1, C:/Users/Khang/Desktop/Final Project/mux2.sv
+source_file = 1, C:/Users/Khang/Desktop/Final Project/add_sub.sv
 source_file = 1, C:/Users/Khang/Desktop/Final Project/db/FinalProject.cbx.xml
 design_name = FinalProject
 instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, FinalProject, 1

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FinalProject
-Tue Nov 26 22:56:00 2019
+Tue Nov 26 23:27:22 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Nov 26 22:56:00 2019           ;
+; Analysis & Synthesis Status        ; Failed - Tue Nov 26 23:27:22 2019           ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; FinalProject                                ;
 ; Top-level Entity Name              ; FinalProject                                ;
@@ -163,7 +163,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Nov 26 22:55:49 2019
+    Info: Processing started: Tue Nov 26 23:27:05 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalProject -c FinalProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -180,13 +180,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file sevense
     Info (12023): Found entity 1: sevenseg File: C:/Users/Khang/Desktop/Final Project/sevenseg.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file mux2.sv
     Info (12023): Found entity 1: mux2 File: C:/Users/Khang/Desktop/Final Project/mux2.sv Line: 4
-Error (10170): Verilog HDL syntax error at add_sub.sv(3) near text: "=";  expecting an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 3
-Error (10171): Verilog HDL syntax error at add_sub.sv(10) near end of file ;  expecting "endmodule" File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 10
-Info (12021): Found 0 design units, including 0 entities, in source file add_sub.sv
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+Info (12021): Found 1 design units, including 1 entities, in source file add_sub.sv
+    Info (12023): Found entity 1: add_sub File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 3
+Critical Warning (10846): Verilog HDL Instantiation warning at add_sub.sv(9): instance has no name File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at add_sub.sv(10): instance has no name File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(11): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 11
+Info (12127): Elaborating entity "FinalProject" for the top level hierarchy
+Warning (10034): Output port "seg" at FinalProject.sv(5) has no driver File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
+Warning (10034): Output port "led" at FinalProject.sv(4) has no driver File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 4
+Warning (10034): Output port "motor" at FinalProject.sv(4) has no driver File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 4
+Info (12128): Elaborating entity "add_sub" for hierarchy "add_sub:comb_3" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 11
+Info (12128): Elaborating entity "adder" for hierarchy "add_sub:comb_3|adder:comb_3" File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 9
+Error (12006): Node instance "comb_4" instantiates undefined entity "substractor". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 10
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 7 warnings
     Error: Peak virtual memory: 4711 megabytes
-    Error: Processing ended: Tue Nov 26 22:56:00 2019
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:27
+    Error: Processing ended: Tue Nov 26 23:27:22 2019
+    Error: Elapsed time: 00:00:17
+    Error: Total CPU time (on all processors): 00:00:40
 
 
