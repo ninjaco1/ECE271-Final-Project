@@ -1,19 +1,107 @@
 |FinalProject
-clk => ~NO_FANOUT~
+clk => clk.IN1
 ltch => ~NO_FANOUT~
 data => ~NO_FANOUT~
+dataYellow => dataYellow.IN1
+reset_n => reset_n.IN1
 led <= <GND>
 motor <= <GND>
-seg[0] <= sevenseg:comb_5.port1
-seg[1] <= sevenseg:comb_5.port1
-seg[2] <= sevenseg:comb_5.port1
-seg[3] <= sevenseg:comb_5.port1
-seg[4] <= sevenseg:comb_5.port1
-seg[5] <= sevenseg:comb_5.port1
-seg[6] <= sevenseg:comb_5.port1
+seg[0] <= sevenseg:comb_6.port1
+seg[1] <= sevenseg:comb_6.port1
+seg[2] <= sevenseg:comb_6.port1
+seg[3] <= sevenseg:comb_6.port1
+seg[4] <= sevenseg:comb_6.port1
+seg[5] <= sevenseg:comb_6.port1
+seg[6] <= sevenseg:comb_6.port1
 
 
-|FinalProject|add_sub:comb_3
+|FinalProject|NesReader:comb_3
+dataYellow => dataYellow.IN1
+clock => clock.IN1
+reset_n => reset_n.IN2
+latchOrange <= NesLatchStateDecoder:matt_i3.nesLatch
+clockRed <= NesClockStateDecoder:matt_i2.nesClock
+up <= NesDataReceiverDecoder:matt_i4.readButtons
+down <= NesDataReceiverDecoder:matt_i4.readButtons
+left <= NesDataReceiverDecoder:matt_i4.readButtons
+right <= NesDataReceiverDecoder:matt_i4.readButtons
+start <= NesDataReceiverDecoder:matt_i4.readButtons
+select <= NesDataReceiverDecoder:matt_i4.readButtons
+a <= NesDataReceiverDecoder:matt_i4.readButtons
+b <= NesDataReceiverDecoder:matt_i4.readButtons
+
+
+|FinalProject|NesReader:comb_3|Counter4:matt_i1
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+reset_n => count[0]~reg0.ACLR
+reset_n => count[1]~reg0.ACLR
+reset_n => count[2]~reg0.ACLR
+reset_n => count[3]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|NesReader:comb_3|NesClockStateDecoder:matt_i2
+controllerState[0] => Decoder0.IN3
+controllerState[1] => Decoder0.IN2
+controllerState[2] => Decoder0.IN1
+controllerState[3] => Decoder0.IN0
+nesClock <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|NesReader:comb_3|NesLatchStateDecoder:matt_i3
+controllerState[0] => Equal0.IN7
+controllerState[1] => Equal0.IN6
+controllerState[2] => Equal0.IN5
+controllerState[3] => Equal0.IN4
+nesLatch <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|NesReader:comb_3|NesDataReceiverDecoder:matt_i4
+dataYellow => readButtons[0]~reg0.DATAIN
+dataYellow => readButtons[7]~reg0.DATAIN
+dataYellow => readButtons[6]~reg0.DATAIN
+dataYellow => readButtons[5]~reg0.DATAIN
+dataYellow => readButtons[4]~reg0.DATAIN
+dataYellow => readButtons[3]~reg0.DATAIN
+dataYellow => readButtons[2]~reg0.DATAIN
+dataYellow => readButtons[1]~reg0.DATAIN
+reset_n => readButtons[0]~reg0.ACLR
+reset_n => readButtons[1]~reg0.ACLR
+reset_n => readButtons[2]~reg0.ACLR
+reset_n => readButtons[3]~reg0.ACLR
+reset_n => readButtons[4]~reg0.ACLR
+reset_n => readButtons[5]~reg0.ACLR
+reset_n => readButtons[6]~reg0.ACLR
+reset_n => readButtons[7]~reg0.ACLR
+controllerState[0] => Decoder0.IN3
+controllerState[0] => readButtons[0]~reg0.CLK
+controllerState[0] => readButtons[1]~reg0.CLK
+controllerState[0] => readButtons[2]~reg0.CLK
+controllerState[0] => readButtons[3]~reg0.CLK
+controllerState[0] => readButtons[4]~reg0.CLK
+controllerState[0] => readButtons[5]~reg0.CLK
+controllerState[0] => readButtons[6]~reg0.CLK
+controllerState[0] => readButtons[7]~reg0.CLK
+controllerState[1] => Decoder0.IN2
+controllerState[2] => Decoder0.IN1
+controllerState[3] => Decoder0.IN0
+readButtons[0] <= readButtons[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readButtons[1] <= readButtons[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readButtons[2] <= readButtons[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readButtons[3] <= readButtons[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readButtons[4] <= readButtons[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readButtons[5] <= readButtons[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readButtons[6] <= readButtons[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readButtons[7] <= readButtons[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|add_sub:comb_4
 a[0] => a[0].IN2
 a[1] => a[1].IN2
 a[2] => a[2].IN2
@@ -34,7 +122,7 @@ y[3] <= substractor:comb_4.port2
 cout <= adder:comb_3.port4
 
 
-|FinalProject|add_sub:comb_3|adder:comb_3
+|FinalProject|add_sub:comb_4|adder:comb_3
 a[0] => Add0.IN4
 a[1] => Add0.IN3
 a[2] => Add0.IN2
@@ -51,7 +139,7 @@ s[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|add_sub:comb_3|substractor:comb_4
+|FinalProject|add_sub:comb_4|substractor:comb_4
 a[0] => Add0.IN8
 a[1] => Add0.IN7
 a[2] => Add0.IN6
@@ -66,7 +154,7 @@ y[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|mux2:comb_4
+|FinalProject|mux2:comb_5
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -85,7 +173,7 @@ y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|sevenseg:comb_5
+|FinalProject|sevenseg:comb_6
 data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
