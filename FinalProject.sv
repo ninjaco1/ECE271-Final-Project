@@ -4,17 +4,20 @@ module FinalProject (input logic clk, ltch, data,
 							output logic led, motor,
 							output logic [6:0] seg);
 							
-	logic [3:0] a,b,s,y, num_out;
+	logic [4:0] a,b,s,y, num_out;
 	logic cin, cout, select;
 	
+	// add and subtract values						
+	add_sub #(4) (a,b,cin,s,y,cout);
 	
-//	adder #(8)(a,b, cin,s, cout);
-//	substractor #(8)(a,b,y);
-							
-	add_sub #(3) (a,b,cin,s,y,cout);
 	
+	// choose if you want to display the sum or difference
 	mux2(s,y, select, num_out);
 	
+	//comparator #(4) (s,y,)
+	
+	
+	// display the answer of the 7 segment display
 	sevenseg(num_out, seg);
 							
 	//log						
