@@ -1,6 +1,7 @@
 //Top Level
 
 module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
+							input logic [10:0] input_keyboard,
 							output logic led, motor, 
 							output logic [6:0] seg);
 							
@@ -10,8 +11,6 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
 	
 	//NES reader outputs
 	logic latchOrange, clockRed, up, down, left, right, start, select, a_but, b_but;
-	
-	//NesReader(dataYellow, clk, reset_n, latchOrange, clockRed, up, down, left, right, select, a_but, b_but);
 	NesReader(
 		.dataYellow				(dataYellow),
 		.clock					(clk),
@@ -29,16 +28,28 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
 	
 	); 
 	//Nes Decoder
-	//NesDecoder(clockRed, latchOrange, a_but, b_but, select_but, slct);
+	logic select_out;
 	NesDecoder(
 		.nes_clk					(clockRed),
 		.nes_latch				(latchOrange),
 		.a							(a_but),
 		.b							(b_but),
 		.select_button			(select),
-		.select					(slct)
+		.select					(slct),
+		.select_key				(select_out)
 	);
 	
+	//ps/2 decoder 
+	logic clk_keyboard, ready_key, red, green, blue;
+	keyboard_decoder (
+		.input_keyboard		(input_keyboard),
+		.clk						(clk_keyboard),
+		.ready					(ready_key),
+		.select					(select_out),
+		.red						(red),
+		.green					(green),
+		.blue						(blue),
+	);
 	
 	
 	// add and subtract values						

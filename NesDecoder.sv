@@ -2,7 +2,7 @@
 
 module NesDecoder (input logic nes_clk, nes_latch, a, b, select_button,
 						//input logic [7:0] readButtons,
-						output logic select);
+						output logic select, select_key);
 						
 	//readButton[7] is the a button
 	//readButton[6] is the b button
