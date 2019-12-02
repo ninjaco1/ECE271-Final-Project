@@ -9,9 +9,13 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
 	
 	
 	//NES reader outputs
-	logic latch_Orange, clock_Red, up, down, left, right, select, a_but, b_but;
+	logic latchOrange, clockRed, up, down, left, right, select, a_but, b_but;
 	
-	NesReader(dataYellow, clk, reset_n, latch_Orange, clock_Red, up, down, left, right, select, a_but, b_but);
+	NesReader(dataYellow, clk, reset_n, latchOrange, clockRed, up, down, left, right, select, a_but, b_but);
+	
+	NesDecoder(clockRed, latchOrange, a_but, b_but, slct);
+	
+	
 	
 	// add and subtract values						
 	add_sub #(4) (a,b,cin,s,y,cout);

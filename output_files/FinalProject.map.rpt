@@ -1,5 +1,5 @@
-Analysis & Elaboration report for FinalProject
-Sun Dec 01 15:19:25 2019
+Analysis & Synthesis report for FinalProject
+Sun Dec 01 21:56:41 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -7,17 +7,25 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: add_sub:comb_4
-  5. Parameter Settings for User Entity Instance: add_sub:comb_4|adder:comb_3
-  6. Parameter Settings for User Entity Instance: add_sub:comb_4|substractor:comb_4
-  7. Analysis & Elaboration Settings
-  8. Port Connectivity Checks: "sevenseg:comb_6"
-  9. Port Connectivity Checks: "mux2:comb_5"
- 10. Port Connectivity Checks: "add_sub:comb_4"
- 11. Port Connectivity Checks: "NesReader:comb_3"
- 12. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: add_sub:comb_5
+ 12. Parameter Settings for User Entity Instance: add_sub:comb_5|adder:comb_3
+ 13. Parameter Settings for User Entity Instance: add_sub:comb_5|substractor:comb_4
+ 14. Port Connectivity Checks: "sevenseg:comb_7"
+ 15. Port Connectivity Checks: "mux2:comb_6"
+ 16. Port Connectivity Checks: "add_sub:comb_5"
+ 17. Port Connectivity Checks: "NesReader:comb_3"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -41,75 +49,29 @@ refer to the applicable agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sun Dec 01 15:19:25 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 01 21:56:41 2019       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; FinalProject                                ;
 ; Top-level Entity Name              ; FinalProject                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 14                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: add_sub:comb_4 ;
-+----------------+-------+------------------------------------+
-; Parameter Name ; Value ; Type                               ;
-+----------------+-------+------------------------------------+
-; N              ; 4     ; Signed Integer                     ;
-+----------------+-------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: add_sub:comb_4|adder:comb_3 ;
-+----------------+-------+-------------------------------------------------+
-; Parameter Name ; Value ; Type                                            ;
-+----------------+-------+-------------------------------------------------+
-; N              ; 4     ; Signed Integer                                  ;
-+----------------+-------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: add_sub:comb_4|substractor:comb_4 ;
-+----------------+-------+-------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                  ;
-+----------------+-------+-------------------------------------------------------+
-; N              ; 4     ; Signed Integer                                        ;
-+----------------+-------+-------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
+; Analysis & Synthesis Settings                                                                              ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -194,8 +156,149 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
+; FinalProject.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/Khang/Desktop/Final Project/FinalProject.sv ;         ;
+; adder.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Khang/Desktop/Final Project/adder.sv        ;         ;
+; substractor.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/Khang/Desktop/Final Project/substractor.sv  ;         ;
+; sevenseg.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/Khang/Desktop/Final Project/sevenseg.sv     ;         ;
+; mux2.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Khang/Desktop/Final Project/mux2.sv         ;         ;
+; add_sub.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Khang/Desktop/Final Project/add_sub.sv      ;         ;
+; NesReader.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Khang/Desktop/Final Project/NesReader.sv    ;         ;
+; NesDecoder.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Khang/Desktop/Final Project/NesDecoder.sv   ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 14    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 14    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
+; |FinalProject              ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 14   ; 0            ; 0          ; |FinalProject       ; FinalProject ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++------------------------------------------------------------------+--------------------+
+; Register name                                                    ; Reason for Removal ;
++------------------------------------------------------------------+--------------------+
+; NesReader:comb_3|NesDataReceiverDecoder:matt_i4|readButtons[5,7] ; Lost fanout        ;
+; NesReader:comb_3|Counter4:matt_i1|count[0..3]                    ; Lost fanout        ;
+; Total Number of Removed Registers = 6                            ;                    ;
++------------------------------------------------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                       ;
++----------------------------------------------------------------+--------------------+---------------------------------------------+
+; Register name                                                  ; Reason for Removal ; Registers Removed due to This Register      ;
++----------------------------------------------------------------+--------------------+---------------------------------------------+
+; NesReader:comb_3|NesDataReceiverDecoder:matt_i4|readButtons[7] ; Lost Fanouts       ; NesReader:comb_3|Counter4:matt_i1|count[0], ;
+;                                                                ;                    ; NesReader:comb_3|Counter4:matt_i1|count[3], ;
+;                                                                ;                    ; NesReader:comb_3|Counter4:matt_i1|count[2], ;
+;                                                                ;                    ; NesReader:comb_3|Counter4:matt_i1|count[1]  ;
++----------------------------------------------------------------+--------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: add_sub:comb_5 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; N              ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: add_sub:comb_5|adder:comb_3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: add_sub:comb_5|substractor:comb_4 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sevenseg:comb_6"                                                                                                                                                                ;
+; Port Connectivity Checks: "sevenseg:comb_7"                                                                                                                                                                ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,7 +307,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux2:comb_5"                                                                                                                                                                     ;
+; Port Connectivity Checks: "mux2:comb_6"                                                                                                                                                                     ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,7 +318,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "add_sub:comb_4"                                                                                                                                                                  ;
+; Port Connectivity Checks: "add_sub:comb_5"                                                                                                                                                                  ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -227,32 +330,52 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "NesReader:comb_3"                                                                                               ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                  ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; latchOrange ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; clockRed    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; up          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; down        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; left        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; right       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; start       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; select      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; a           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; b           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "NesReader:comb_3"                                                                                         ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; up    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; down  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; left  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; right ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; start ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; b     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 14                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sun Dec 01 15:19:10 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalProject -c FinalProject --analysis_and_elaboration
+    Info: Processing started: Sun Dec 01 21:56:23 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalProject -c FinalProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 0 design units, including 0 entities, in source file modules.sv
@@ -282,12 +405,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file witchcr
     Info (12023): Found entity 1: witchcraft File: C:/Users/Khang/Desktop/Final Project/witchcraft.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file comparator.sv
     Info (12023): Found entity 1: comparator File: C:/Users/Khang/Desktop/Final Project/comparator.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file nesdecoder.sv
+    Info (12023): Found entity 1: NesDecoder File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 3
 Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(14): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(16): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 16
 Critical Warning (10846): Verilog HDL Instantiation warning at add_sub.sv(9): instance has no name File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 9
 Critical Warning (10846): Verilog HDL Instantiation warning at add_sub.sv(10): instance has no name File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 10
-Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(17): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 17
 Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(21): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 21
-Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(27): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 27
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(25): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(31): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 31
 Info (12127): Elaborating entity "FinalProject" for the top level hierarchy
 Warning (10034): Output port "led" at FinalProject.sv(4) has no driver File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 4
 Warning (10034): Output port "motor" at FinalProject.sv(4) has no driver File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 4
@@ -297,12 +423,21 @@ Warning (10230): Verilog HDL assignment warning at NesReader.sv(69): truncated v
 Info (12128): Elaborating entity "NesClockStateDecoder" for hierarchy "NesReader:comb_3|NesClockStateDecoder:matt_i2" File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 47
 Info (12128): Elaborating entity "NesLatchStateDecoder" for hierarchy "NesReader:comb_3|NesLatchStateDecoder:matt_i3" File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 52
 Info (12128): Elaborating entity "NesDataReceiverDecoder" for hierarchy "NesReader:comb_3|NesDataReceiverDecoder:matt_i4" File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 59
-Info (12128): Elaborating entity "add_sub" for hierarchy "add_sub:comb_4" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 17
-Info (12128): Elaborating entity "adder" for hierarchy "add_sub:comb_4|adder:comb_3" File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 9
-Info (12128): Elaborating entity "substractor" for hierarchy "add_sub:comb_4|substractor:comb_4" File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 10
-Info (12128): Elaborating entity "mux2" for hierarchy "mux2:comb_5" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 21
-Info (12128): Elaborating entity "sevenseg" for hierarchy "sevenseg:comb_6" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 27
+Info (12128): Elaborating entity "NesDecoder" for hierarchy "NesDecoder:comb_4" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 16
+Warning (10235): Verilog HDL Always Construct warning at NesDecoder.sv(14): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 14
+Warning (10235): Verilog HDL Always Construct warning at NesDecoder.sv(18): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 18
+Warning (10240): Verilog HDL Always Construct warning at NesDecoder.sv(10): inferring latch(es) for variable "select", which holds its previous value in one or more paths through the always construct File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 10
+Info (10041): Inferred latch for "select" at NesDecoder.sv(10) File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 10
+Info (12128): Elaborating entity "add_sub" for hierarchy "add_sub:comb_5" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 21
+Info (12128): Elaborating entity "adder" for hierarchy "add_sub:comb_5|adder:comb_3" File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 9
+Info (12128): Elaborating entity "substractor" for hierarchy "add_sub:comb_5|substractor:comb_4" File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 10
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:comb_6" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 25
+Info (12128): Elaborating entity "sevenseg" for hierarchy "sevenseg:comb_7" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 31
 Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 7
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 7
+    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 7
     Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 7
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 7
@@ -313,10 +448,32 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 7
     Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 7
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4715 megabytes
-    Info: Processing ended: Sun Dec 01 15:19:25 2019
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:33
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led" is stuck at GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 4
+    Warning (13410): Pin "motor" is stuck at GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 4
+    Warning (13410): Pin "seg[0]" is stuck at GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
+    Warning (13410): Pin "seg[1]" is stuck at GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
+    Warning (13410): Pin "seg[2]" is stuck at GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
+    Warning (13410): Pin "seg[3]" is stuck at GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
+    Warning (13410): Pin "seg[4]" is stuck at GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
+    Warning (13410): Pin "seg[5]" is stuck at GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
+    Warning (13410): Pin "seg[6]" is stuck at VCC File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 3
+    Warning (15610): No output dependent on input pin "ltch" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 3
+    Warning (15610): No output dependent on input pin "data" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 3
+    Warning (15610): No output dependent on input pin "dataYellow" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 3
+    Warning (15610): No output dependent on input pin "reset_n" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 3
+Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 9 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4742 megabytes
+    Info: Processing ended: Sun Dec 01 21:56:41 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:36
 
 

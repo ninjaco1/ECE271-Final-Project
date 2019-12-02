@@ -4,15 +4,15 @@ ltch => ~NO_FANOUT~
 data => ~NO_FANOUT~
 dataYellow => dataYellow.IN1
 reset_n => reset_n.IN1
-led <= <GND>
-motor <= <GND>
-seg[0] <= sevenseg:comb_6.port1
-seg[1] <= sevenseg:comb_6.port1
-seg[2] <= sevenseg:comb_6.port1
-seg[3] <= sevenseg:comb_6.port1
-seg[4] <= sevenseg:comb_6.port1
-seg[5] <= sevenseg:comb_6.port1
-seg[6] <= sevenseg:comb_6.port1
+led << <GND>
+motor << <GND>
+seg[0] << sevenseg:comb_7.port1
+seg[1] << sevenseg:comb_7.port1
+seg[2] << sevenseg:comb_7.port1
+seg[3] << sevenseg:comb_7.port1
+seg[4] << sevenseg:comb_7.port1
+seg[5] << sevenseg:comb_7.port1
+seg[6] << sevenseg:comb_7.port1
 
 
 |FinalProject|NesReader:comb_3
@@ -101,7 +101,17 @@ readButtons[6] <= readButtons[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readButtons[7] <= readButtons[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|add_sub:comb_4
+|FinalProject|NesDecoder:comb_4
+nes_clk => ~NO_FANOUT~
+nes_latch => ~NO_FANOUT~
+a => select.IN0
+a => comb.IN1
+a => comb.IN1
+b => select.IN1
+select <= select$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|add_sub:comb_5
 a[0] => a[0].IN2
 a[1] => a[1].IN2
 a[2] => a[2].IN2
@@ -122,7 +132,7 @@ y[3] <= substractor:comb_4.port2
 cout <= adder:comb_3.port4
 
 
-|FinalProject|add_sub:comb_4|adder:comb_3
+|FinalProject|add_sub:comb_5|adder:comb_3
 a[0] => Add0.IN4
 a[1] => Add0.IN3
 a[2] => Add0.IN2
@@ -139,7 +149,7 @@ s[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|add_sub:comb_4|substractor:comb_4
+|FinalProject|add_sub:comb_5|substractor:comb_4
 a[0] => Add0.IN8
 a[1] => Add0.IN7
 a[2] => Add0.IN6
@@ -154,7 +164,7 @@ y[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|mux2:comb_5
+|FinalProject|mux2:comb_6
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -173,7 +183,7 @@ y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|sevenseg:comb_6
+|FinalProject|sevenseg:comb_7
 data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
