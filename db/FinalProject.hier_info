@@ -4,15 +4,15 @@ ltch => ~NO_FANOUT~
 data => ~NO_FANOUT~
 dataYellow => dataYellow.IN1
 reset_n => reset_n.IN1
-led << <GND>
-motor << <GND>
-seg[0] << sevenseg:comb_7.port1
-seg[1] << sevenseg:comb_7.port1
-seg[2] << sevenseg:comb_7.port1
-seg[3] << sevenseg:comb_7.port1
-seg[4] << sevenseg:comb_7.port1
-seg[5] << sevenseg:comb_7.port1
-seg[6] << sevenseg:comb_7.port1
+led <= <GND>
+motor <= <GND>
+seg[0] <= sevenseg:comb_7.port1
+seg[1] <= sevenseg:comb_7.port1
+seg[2] <= sevenseg:comb_7.port1
+seg[3] <= sevenseg:comb_7.port1
+seg[4] <= sevenseg:comb_7.port1
+seg[5] <= sevenseg:comb_7.port1
+seg[6] <= sevenseg:comb_7.port1
 
 
 |FinalProject|NesReader:comb_3
@@ -108,6 +108,7 @@ a => select.IN0
 a => comb.IN1
 a => comb.IN1
 b => select.IN1
+select_button => ~NO_FANOUT~
 select <= select$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 

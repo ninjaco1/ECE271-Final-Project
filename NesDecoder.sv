@@ -1,6 +1,6 @@
 //NES decoder
 
-module NesDecoder (input logic nes_clk, nes_latch, a, b,
+module NesDecoder (input logic nes_clk, nes_latch, a, b, select_button,
 						//input logic [7:0] readButtons,
 						output logic select);
 						
@@ -9,13 +9,10 @@ module NesDecoder (input logic nes_clk, nes_latch, a, b,
 	
 	always @ (nes_latch)
 		begin
-			//if(nes_latch)
-		//			begin
-						if(a) 
-								select <= 0;// to add
-						else if (b)
-								select <= 1;// to subtract
-			//		end
+			if(a) 
+				select <= 0;// to add
+			else if (b)
+				select <= 1;// to subtract
 		end
 endmodule
 		
