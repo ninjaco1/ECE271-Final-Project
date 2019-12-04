@@ -1,6 +1,6 @@
 //Top Level
 
-module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
+module FinalProject (input logic clk, ltch, data, dataYellow, reset_n, botton, clk_keyboard,
 							input logic [10:0] input_keyboard,
 							output logic led, motor, 
 							output logic [6:0] seg);
@@ -37,11 +37,22 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
 		.select					(slct),
 		.select_key				(select_out)
 	);
+	//PS2keyboard
+//	PS2keyboard(
+//		.resetbut				(botton),
+//		.PS2data					(input_keyboard),
+//		.PS2clock				(clk_keyboard),
+//		.code						()
+//	);
+	
+	
+	
+	
 	//ps/2 decoder 
-	logic clk_keyboard, ready_key, red, green, blue;
+	logic clk_key, ready_key, red, green, blue;
 	keyboard_decoder (
 		.input_keyboard		(input_keyboard),
-		.clk						(clk_keyboard),
+		.clk						(clk_key),
 		.ready					(ready_key),
 		.select					(select_out),
 		.red						(red),
