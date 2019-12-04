@@ -1,5 +1,5 @@
 Analysis & Elaboration report for FinalProject
-Tue Dec 03 23:04:57 2019
+Wed Dec 04 00:17:46 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -9,18 +9,23 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component
-  5. Parameter Settings for User Entity Instance: add_sub:comb_6
-  6. Parameter Settings for User Entity Instance: add_sub:comb_6|adder:comb_3
-  7. altpll Parameter Settings by Entity Instance
-  8. Analysis & Elaboration Settings
-  9. Port Connectivity Checks: "sevenseg:comb_8"
- 10. Port Connectivity Checks: "mux2:comb_7"
- 11. Port Connectivity Checks: "add_sub:comb_6"
- 12. Port Connectivity Checks: "keyboard_decoder:comb_5|PLL:pll"
- 13. Port Connectivity Checks: "keyboard_decoder:comb_5"
- 14. Port Connectivity Checks: "NesReader:comb_3"
- 15. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component
+  5. Parameter Settings for User Entity Instance: keyboard_decoder:comb_6|witchcraft:h
+  6. Parameter Settings for User Entity Instance: keyboard_decoder:comb_6|witchcraft:v
+  7. Parameter Settings for User Entity Instance: add_sub:comb_7
+  8. Parameter Settings for User Entity Instance: add_sub:comb_7|adder:comb_3
+  9. altpll Parameter Settings by Entity Instance
+ 10. Analysis & Elaboration Settings
+ 11. Port Connectivity Checks: "sevenseg:comb_9"
+ 12. Port Connectivity Checks: "mux2:comb_8"
+ 13. Port Connectivity Checks: "add_sub:comb_7"
+ 14. Port Connectivity Checks: "keyboard_decoder:comb_6|sevenseg:comb_4"
+ 15. Port Connectivity Checks: "keyboard_decoder:comb_6|witchcraft:v"
+ 16. Port Connectivity Checks: "keyboard_decoder:comb_6"
+ 17. Port Connectivity Checks: "PS2keyboard:comb_5"
+ 18. Port Connectivity Checks: "NesDecoder:comb_4"
+ 19. Port Connectivity Checks: "NesReader:comb_3"
+ 20. Analysis & Elaboration Messages
 
 
 
@@ -46,7 +51,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Tue Dec 03 23:04:57 2019       ;
+; Analysis & Elaboration Status      ; Successful - Wed Dec 04 00:17:46 2019       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; FinalProject                                ;
 ; Top-level Entity Name              ; FinalProject                                ;
@@ -82,7 +87,7 @@ refer to the applicable agreement for further details.
 
 
 +------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component ;
+; Parameter Settings for User Entity Instance: keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component ;
 +-------------------------------+-----------------------+----------------------------------------------+
 ; Parameter Name                ; Value                 ; Type                                         ;
 +-------------------------------+-----------------------+----------------------------------------------+
@@ -455,8 +460,30 @@ refer to the applicable agreement for further details.
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: keyboard_decoder:comb_6|witchcraft:h ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; count2         ; 800   ; Signed Integer                                           ;
+; M              ; 10    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: keyboard_decoder:comb_6|witchcraft:v ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; count2         ; 525   ; Signed Integer                                           ;
+; M              ; 10    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: add_sub:comb_6 ;
+; Parameter Settings for User Entity Instance: add_sub:comb_7 ;
 +----------------+-------+------------------------------------+
 ; Parameter Name ; Value ; Type                               ;
 +----------------+-------+------------------------------------+
@@ -466,7 +493,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: add_sub:comb_6|adder:comb_3 ;
+; Parameter Settings for User Entity Instance: add_sub:comb_7|adder:comb_3 ;
 +----------------+-------+-------------------------------------------------+
 ; Parameter Name ; Value ; Type                                            ;
 +----------------+-------+-------------------------------------------------+
@@ -481,7 +508,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                          ; Value                                                   ;
 +-------------------------------+---------------------------------------------------------+
 ; Number of entity instances    ; 1                                                       ;
-; Entity Instance               ; keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component ;
+; Entity Instance               ; keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component ;
 ;     -- OPERATION_MODE         ; NORMAL                                                  ;
 ;     -- PLL_TYPE               ; AUTO                                                    ;
 ;     -- PRIMARY_CLOCK          ; INCLK0                                                  ;
@@ -579,7 +606,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sevenseg:comb_8"                                                                                                                                                                ;
+; Port Connectivity Checks: "sevenseg:comb_9"                                                                                                                                                                ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -588,7 +615,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux2:comb_7"                                                                                                                                                                     ;
+; Port Connectivity Checks: "mux2:comb_8"                                                                                                                                                                     ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -599,7 +626,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "add_sub:comb_6"                                                                                                                                                                  ;
+; Port Connectivity Checks: "add_sub:comb_7"                                                                                                                                                                  ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -611,27 +638,54 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "keyboard_decoder:comb_5|PLL:pll"                                                    ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; c0   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyboard_decoder:comb_6|sevenseg:comb_4"                                                      ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; segments[5..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "keyboard_decoder:comb_5"                                                                                                  ;
-+-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                                                                  ;
-+-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
-; red   ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "red[3..1]" have no fanouts   ;
-; red   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                      ;
-; green ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "green[3..1]" have no fanouts ;
-; green ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                      ;
-; blue  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "blue[3..1]" have no fanouts  ;
-; blue  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                      ;
-+-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyboard_decoder:comb_6|witchcraft:v"                                                                         ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; vsync_clk ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyboard_decoder:comb_6"                                                                                                                                                  ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                               ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; keyboard ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "keyboard[7..1]" will be connected to GND.                      ;
+; q        ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (5 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; red1     ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                          ;
+; green1   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                          ;
+; blue1    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                          ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PS2keyboard:comb_5"                                                                                                                                                                   ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PS2data ; Input  ; Warning  ; Input port expression (11 bits) is wider than the input port (1 bits) it drives.  The 10 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; code    ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "code[7..1]" have no fanouts                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "NesDecoder:comb_4"                                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; select_key ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -653,7 +707,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Dec 03 23:04:48 2019
+    Info: Processing started: Wed Dec 04 00:17:33 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalProject -c FinalProject --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -673,7 +727,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file mux2.sv
 Info (12021): Found 1 design units, including 1 entities, in source file add_sub.sv
     Info (12023): Found entity 1: add_sub File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file keyboard_decoder.sv
-    Info (12023): Found entity 1: keyboard_decoder File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 1
+    Info (12023): Found entity 1: keyboard_decoder File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 2
 Info (12021): Found 5 design units, including 5 entities, in source file nesreader.sv
     Info (12023): Found entity 1: NesReader File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 21
     Info (12023): Found entity 2: Counter4 File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 63
@@ -694,39 +748,50 @@ Info (12021): Found 5 design units, including 5 entities, in source file ps2keyb
     Info (12023): Found entity 5: comparator11 File: C:/Users/Khang/Desktop/Final Project/PS2keyboard.sv Line: 109
 Info (12021): Found 1 design units, including 1 entities, in source file vga.sv
     Info (12023): Found entity 1: vga File: C:/Users/Khang/Desktop/Final Project/vga.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file decoder.sv
+    Info (12023): Found entity 1: decoder File: C:/Users/Khang/Desktop/Final Project/decoder.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at PS2keyboard.sv(16): created implicit net for "c_comparator11" File: C:/Users/Khang/Desktop/Final Project/PS2keyboard.sv Line: 16
-Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(28): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 28
-Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(39): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 39
-Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(50): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 50
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(30): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 30
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(41): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 41
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(49): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 49
+Critical Warning (10846): Verilog HDL Instantiation warning at keyboard_decoder.sv(40): instance has no name File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 40
+Critical Warning (10846): Verilog HDL Instantiation warning at keyboard_decoder.sv(45): instance has no name File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 45
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(63): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 63
 Critical Warning (10846): Verilog HDL Instantiation warning at add_sub.sv(9): instance has no name File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 9
-Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(52): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 52
-Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(56): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 56
-Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(62): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 62
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(65): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 65
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(69): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 69
+Critical Warning (10846): Verilog HDL Instantiation warning at FinalProject.sv(75): instance has no name File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 75
+Critical Warning (10846): Verilog HDL Instantiation warning at vga.sv(14): instance has no name File: C:/Users/Khang/Desktop/Final Project/vga.sv Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at vga.sv(21): instance has no name File: C:/Users/Khang/Desktop/Final Project/vga.sv Line: 21
+Critical Warning (10846): Verilog HDL Instantiation warning at vga.sv(26): instance has no name File: C:/Users/Khang/Desktop/Final Project/vga.sv Line: 26
 Info (12127): Elaborating entity "FinalProject" for the top level hierarchy
 Warning (10034): Output port "led" at FinalProject.sv(5) has no driver File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
 Warning (10034): Output port "motor" at FinalProject.sv(5) has no driver File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 5
-Info (12128): Elaborating entity "NesReader" for hierarchy "NesReader:comb_3" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 28
+Info (12128): Elaborating entity "NesReader" for hierarchy "NesReader:comb_3" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 30
 Info (12128): Elaborating entity "Counter4" for hierarchy "NesReader:comb_3|Counter4:matt_i1" File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 42
 Warning (10230): Verilog HDL assignment warning at NesReader.sv(69): truncated value with size 32 to match size of target (4) File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 69
 Info (12128): Elaborating entity "NesClockStateDecoder" for hierarchy "NesReader:comb_3|NesClockStateDecoder:matt_i2" File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 47
 Info (12128): Elaborating entity "NesLatchStateDecoder" for hierarchy "NesReader:comb_3|NesLatchStateDecoder:matt_i3" File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 52
 Info (12128): Elaborating entity "NesDataReceiverDecoder" for hierarchy "NesReader:comb_3|NesDataReceiverDecoder:matt_i4" File: C:/Users/Khang/Desktop/Final Project/NesReader.sv Line: 59
-Info (12128): Elaborating entity "NesDecoder" for hierarchy "NesDecoder:comb_4" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 39
+Info (12128): Elaborating entity "NesDecoder" for hierarchy "NesDecoder:comb_4" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 41
 Warning (10235): Verilog HDL Always Construct warning at NesDecoder.sv(12): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 12
 Warning (10235): Verilog HDL Always Construct warning at NesDecoder.sv(14): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 14
 Warning (10240): Verilog HDL Always Construct warning at NesDecoder.sv(10): inferring latch(es) for variable "select", which holds its previous value in one or more paths through the always construct File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 10
 Warning (10034): Output port "select_key" at NesDecoder.sv(5) has no driver File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 5
 Info (10041): Inferred latch for "select" at NesDecoder.sv(10) File: C:/Users/Khang/Desktop/Final Project/NesDecoder.sv Line: 10
-Info (12128): Elaborating entity "keyboard_decoder" for hierarchy "keyboard_decoder:comb_5" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 50
-Warning (10034): Output port "red" at keyboard_decoder.sv(5) has no driver File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 5
-Warning (10034): Output port "green" at keyboard_decoder.sv(5) has no driver File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 5
-Warning (10034): Output port "blue" at keyboard_decoder.sv(5) has no driver File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 5
+Info (12128): Elaborating entity "PS2keyboard" for hierarchy "PS2keyboard:comb_5" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 49
+Info (12128): Elaborating entity "shiftregister11" for hierarchy "PS2keyboard:comb_5|shiftregister11:shiftregister11" File: C:/Users/Khang/Desktop/Final Project/PS2keyboard.sv Line: 18
+Info (12128): Elaborating entity "idlecounter2" for hierarchy "PS2keyboard:comb_5|idlecounter2:idlecounter2" File: C:/Users/Khang/Desktop/Final Project/PS2keyboard.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at PS2keyboard.sv(104): truncated value with size 32 to match size of target (4) File: C:/Users/Khang/Desktop/Final Project/PS2keyboard.sv Line: 104
+Info (12128): Elaborating entity "comparator11" for hierarchy "PS2keyboard:comb_5|comparator11:comparator11" File: C:/Users/Khang/Desktop/Final Project/PS2keyboard.sv Line: 30
+Info (12128): Elaborating entity "shiftregistertotal" for hierarchy "PS2keyboard:comb_5|shiftregistertotal:shiftregistertotal" File: C:/Users/Khang/Desktop/Final Project/PS2keyboard.sv Line: 37
+Info (12128): Elaborating entity "keyboard_decoder" for hierarchy "keyboard_decoder:comb_6" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 63
 Warning (12125): Using design file pll.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: PLL File: C:/Users/Khang/Desktop/Final Project/pll.v Line: 39
-Info (12128): Elaborating entity "PLL" for hierarchy "keyboard_decoder:comb_5|PLL:pll" File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 13
-Info (12128): Elaborating entity "altpll" for hierarchy "keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component" File: C:/Users/Khang/Desktop/Final Project/pll.v Line: 90
-Info (12130): Elaborated megafunction instantiation "keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component" File: C:/Users/Khang/Desktop/Final Project/pll.v Line: 90
-Info (12133): Instantiated megafunction "keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component" with the following parameter: File: C:/Users/Khang/Desktop/Final Project/pll.v Line: 90
+Info (12128): Elaborating entity "PLL" for hierarchy "keyboard_decoder:comb_6|PLL:pll" File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 22
+Info (12128): Elaborating entity "altpll" for hierarchy "keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component" File: C:/Users/Khang/Desktop/Final Project/pll.v Line: 90
+Info (12130): Elaborated megafunction instantiation "keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component" File: C:/Users/Khang/Desktop/Final Project/pll.v Line: 90
+Info (12133): Instantiated megafunction "keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component" with the following parameter: File: C:/Users/Khang/Desktop/Final Project/pll.v Line: 90
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5000"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -783,34 +848,45 @@ Info (12133): Instantiated megafunction "keyboard_decoder:comb_5|PLL:pll|altpll:
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: PLL_altpll File: C:/Users/Khang/Desktop/Final Project/db/pll_altpll.v Line: 29
-Info (12128): Elaborating entity "PLL_altpll" for hierarchy "keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "add_sub" for hierarchy "add_sub:comb_6" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 52
-Info (12128): Elaborating entity "adder" for hierarchy "add_sub:comb_6|adder:comb_3" File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 9
-Info (12128): Elaborating entity "mux2" for hierarchy "mux2:comb_7" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 56
-Info (12128): Elaborating entity "sevenseg" for hierarchy "sevenseg:comb_8" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 62
+Info (12128): Elaborating entity "PLL_altpll" for hierarchy "keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altpll.tdf Line: 897
+Info (12128): Elaborating entity "witchcraft" for hierarchy "keyboard_decoder:comb_6|witchcraft:h" File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 29
+Info (12128): Elaborating entity "witchcraft" for hierarchy "keyboard_decoder:comb_6|witchcraft:v" File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 35
+Info (12128): Elaborating entity "decoder" for hierarchy "keyboard_decoder:comb_6|decoder:comb_3" File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 40
+Info (12128): Elaborating entity "sevenseg" for hierarchy "keyboard_decoder:comb_6|sevenseg:comb_4" File: C:/Users/Khang/Desktop/Final Project/keyboard_decoder.sv Line: 45
+Info (12128): Elaborating entity "add_sub" for hierarchy "add_sub:comb_7" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 65
+Info (12128): Elaborating entity "adder" for hierarchy "add_sub:comb_7|adder:comb_3" File: C:/Users/Khang/Desktop/Final Project/add_sub.sv Line: 9
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:comb_8" File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 69
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
+    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
+    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
+    Warning (12110): Net "a[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
+    Warning (12110): Net "a[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 8
-Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 39 warnings
+    Warning (12110): Net "a[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "a[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "s[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "y[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+    Warning (12110): Net "num_out[4]" is missing source, defaulting to GND File: C:/Users/Khang/Desktop/Final Project/FinalProject.sv Line: 10
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 4727 megabytes
-    Info: Processing ended: Tue Dec 03 23:04:57 2019
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Processing ended: Wed Dec 04 00:17:46 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:30
 
 

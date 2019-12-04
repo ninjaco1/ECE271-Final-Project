@@ -1,9 +1,11 @@
 //Top Level
 
-module FinalProject (input logic clk, ltch, data, dataYellow, reset_n, botton, clk_keyboard,
+module FinalProject (input logic clk, ltch, data, dataYellow, reset_n, botton, clk_key,
 							input logic [10:0] input_keyboard,
 							output logic led, motor, 
-							output logic [6:0] seg);
+							output logic [6:0] seg,
+							output logic [3:0] red, green, blue,
+							output logic vsync, hsync);
 							
 	logic [4:0] a,b,s,y, num_out;
 	logic cin, cout, slct;
@@ -38,26 +40,26 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n, botton, c
 		.select_key				(select_out)
 	);
 	//PS2keyboard
-//	PS2keyboard(
-//		.resetbut				(botton),
-//		.PS2data					(input_keyboard),
-//		.PS2clock				(clk_keyboard),
-//		.code						()
-//	);
-	
+	logic code;
+	PS2keyboard(
+		.resetbut				(botton),
+		.PS2data					(input_keyboard),
+		.PS2clock				(clk_key),
+		.code						(code)
+	);
 	
 	
 	
 	//ps/2 decoder 
-	logic clk_key, ready_key, red, green, blue;
 	keyboard_decoder (
-		.input_keyboard		(input_keyboard),
+		.keyboard				(code),
 		.clk						(clk_key),
-		.ready					(ready_key),
-		.select					(select_out),
+		.hsync					(hsync),
+		.vsync					(vsync),
 		.red						(red),
 		.green					(green),
-		.blue						(blue)
+		.blue					(blue),
+		.q							(a)
 	);
 	// add and subtract values						
 	add_sub #(4) (a,b,cin,s,y,cout);

@@ -2,7 +2,7 @@ module decoder(input logic [7:0] data,
 					output logic [3:0] q);
 		
 		always_comb
-		begin
+		//begin
 			case(data)
 				8'b00110000: q = 4'd0; //0000
 				8'b00110001: q = 4'd1; //0001
@@ -14,6 +14,7 @@ module decoder(input logic [7:0] data,
 				8'b00110111: q = 4'd7;
 				8'b00111000: q = 4'd8;
 				8'b00111001: q = 4'd9;
+				default: q = 4'd10;
 			endcase
-		end
+		//end
 endmodule

@@ -4,6 +4,7 @@ module keyboard_decoder(input [7:0] keyboard,
 								input logic clk,
 								output logic hsync,
 								output logic vsync, 
+								output logic [3:0]q,
 								output logic [3:0] red, green, blue);
 	
 	logic slowclock;
@@ -12,7 +13,7 @@ module keyboard_decoder(input [7:0] keyboard,
 	logic reset;
 	logic [9:0] count;
 	logic [9:0] count2;
-	logic [3:0] q;
+	//logic [3:0] q;
 	logic [6:0] segments;
 	
 	PLL pll(
@@ -21,15 +22,15 @@ module keyboard_decoder(input [7:0] keyboard,
 	);
 	
 	//Hsync
-	witchcraft #(800, 10) hsync(
+	witchcraft #(800, 10) h(
 		.clk (slowclock),
 		.count (count),
-		vsync_clk (clockout)
+		.vsync_clk (clockout)
 	);
 	
 	//Vsync
-	witchcraft #(525, 10) vsync(
-		.clk (clockout)
+	witchcraft #(525, 10) v(
+		.clk (clockout),
 		.count (count2)
 	);
 	

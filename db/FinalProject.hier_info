@@ -4,6 +4,8 @@ ltch => ~NO_FANOUT~
 data => ~NO_FANOUT~
 dataYellow => dataYellow.IN1
 reset_n => reset_n.IN1
+botton => botton.IN1
+clk_key => clk_key.IN2
 input_keyboard[0] => input_keyboard[0].IN1
 input_keyboard[1] => input_keyboard[1].IN1
 input_keyboard[2] => input_keyboard[2].IN1
@@ -15,15 +17,29 @@ input_keyboard[7] => input_keyboard[7].IN1
 input_keyboard[8] => input_keyboard[8].IN1
 input_keyboard[9] => input_keyboard[9].IN1
 input_keyboard[10] => input_keyboard[10].IN1
-led << <GND>
-motor << <GND>
-seg[0] << sevenseg:comb_8.port1
-seg[1] << sevenseg:comb_8.port1
-seg[2] << sevenseg:comb_8.port1
-seg[3] << sevenseg:comb_8.port1
-seg[4] << sevenseg:comb_8.port1
-seg[5] << sevenseg:comb_8.port1
-seg[6] << sevenseg:comb_8.port1
+led <= <GND>
+motor <= <GND>
+seg[0] <= sevenseg:comb_9.port1
+seg[1] <= sevenseg:comb_9.port1
+seg[2] <= sevenseg:comb_9.port1
+seg[3] <= sevenseg:comb_9.port1
+seg[4] <= sevenseg:comb_9.port1
+seg[5] <= sevenseg:comb_9.port1
+seg[6] <= sevenseg:comb_9.port1
+red[0] <= keyboard_decoder:comb_6.red
+red[1] <= keyboard_decoder:comb_6.red
+red[2] <= keyboard_decoder:comb_6.red
+red[3] <= keyboard_decoder:comb_6.red
+green[0] <= keyboard_decoder:comb_6.green
+green[1] <= keyboard_decoder:comb_6.green
+green[2] <= keyboard_decoder:comb_6.green
+green[3] <= keyboard_decoder:comb_6.green
+blue[0] <= keyboard_decoder:comb_6.blue
+blue[1] <= keyboard_decoder:comb_6.blue
+blue[2] <= keyboard_decoder:comb_6.blue
+blue[3] <= keyboard_decoder:comb_6.blue
+vsync <= keyboard_decoder:comb_6.vsync
+hsync <= keyboard_decoder:comb_6.hsync
 
 
 |FinalProject|NesReader:comb_3
@@ -124,41 +140,183 @@ select <= select$latch.DB_MAX_OUTPUT_PORT_TYPE
 select_key <= <GND>
 
 
-|FinalProject|keyboard_decoder:comb_5
-input_keyboard[0] => ~NO_FANOUT~
-input_keyboard[1] => ~NO_FANOUT~
-input_keyboard[2] => ~NO_FANOUT~
-input_keyboard[3] => ~NO_FANOUT~
-input_keyboard[4] => ~NO_FANOUT~
-input_keyboard[5] => ~NO_FANOUT~
-input_keyboard[6] => ~NO_FANOUT~
-input_keyboard[7] => ~NO_FANOUT~
-input_keyboard[8] => ~NO_FANOUT~
-input_keyboard[9] => ~NO_FANOUT~
-input_keyboard[10] => ~NO_FANOUT~
+|FinalProject|PS2keyboard:comb_5
+resetbut => resetbut.IN2
+PS2data => PS2data.IN1
+PS2clock => PS2clock.IN3
+code[0] <= shiftregistertotal:shiftregistertotal.q
+code[1] <= shiftregistertotal:shiftregistertotal.q
+code[2] <= shiftregistertotal:shiftregistertotal.q
+code[3] <= shiftregistertotal:shiftregistertotal.q
+code[4] <= shiftregistertotal:shiftregistertotal.q
+code[5] <= shiftregistertotal:shiftregistertotal.q
+code[6] <= shiftregistertotal:shiftregistertotal.q
+code[7] <= shiftregistertotal:shiftregistertotal.q
+
+
+|FinalProject|PS2keyboard:comb_5|shiftregister11:shiftregister11
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+clk => q[4]~reg0.CLK
+clk => q[5]~reg0.CLK
+clk => q[6]~reg0.CLK
+clk => q[7]~reg0.CLK
+clk => r[1].CLK
+clk => r[2].CLK
+clk => r[3].CLK
+clk => r[4].CLK
+clk => r[5].CLK
+clk => r[6].CLK
+clk => r[7].CLK
+clk => r[8].CLK
+clk => r[9].CLK
+clk => r[10].CLK
+d => r.DATAA
+reset1 => q[0]~reg0.ACLR
+reset1 => q[1]~reg0.ACLR
+reset1 => q[2]~reg0.ACLR
+reset1 => q[3]~reg0.ACLR
+reset1 => q[4]~reg0.ACLR
+reset1 => q[5]~reg0.ACLR
+reset1 => q[6]~reg0.ACLR
+reset1 => q[7]~reg0.ACLR
+reset1 => r[1].ACLR
+reset1 => r[2].ACLR
+reset1 => r[3].ACLR
+reset1 => r[4].ACLR
+reset1 => r[5].ACLR
+reset1 => r[6].ACLR
+reset1 => r[7].ACLR
+reset1 => r[8].ACLR
+reset1 => r[9].ACLR
+reset1 => r[10].ACLR
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => r.OUTPUTSELECT
+reset2 => r.OUTPUTSELECT
+reset2 => r.OUTPUTSELECT
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|PS2keyboard:comb_5|idlecounter2:idlecounter2
+reset1 => q[0]~reg0.ACLR
+reset1 => q[1]~reg0.ACLR
+reset1 => q[2]~reg0.ACLR
+reset1 => q[3]~reg0.ACLR
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|PS2keyboard:comb_5|comparator11:comparator11
+a[0] => LessThan0.IN8
+a[1] => LessThan0.IN7
+a[2] => LessThan0.IN6
+a[3] => LessThan0.IN5
+eq <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|PS2keyboard:comb_5|shiftregistertotal:shiftregistertotal
+d[0] => q.DATAB
+d[1] => q.DATAB
+d[2] => q.DATAB
+d[3] => q.DATAB
+d[4] => q.DATAB
+d[5] => q.DATAB
+d[6] => q.DATAB
+d[7] => q.DATAB
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+clk => q[4]~reg0.CLK
+clk => q[5]~reg0.CLK
+clk => q[6]~reg0.CLK
+clk => q[7]~reg0.CLK
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|keyboard_decoder:comb_6
+keyboard[0] => keyboard[0].IN1
+keyboard[1] => keyboard[1].IN1
+keyboard[2] => keyboard[2].IN1
+keyboard[3] => keyboard[3].IN1
+keyboard[4] => keyboard[4].IN1
+keyboard[5] => keyboard[5].IN1
+keyboard[6] => keyboard[6].IN1
+keyboard[7] => keyboard[7].IN1
+red1[0] => ~NO_FANOUT~
+red1[1] => ~NO_FANOUT~
+green1[0] => ~NO_FANOUT~
+green1[1] => ~NO_FANOUT~
+blue1[0] => ~NO_FANOUT~
+blue1[1] => ~NO_FANOUT~
 clk => clk.IN1
-ready => ~NO_FANOUT~
-select => ~NO_FANOUT~
-red[0] <= <GND>
-red[1] <= <GND>
-red[2] <= <GND>
-red[3] <= <GND>
-green[0] <= <GND>
-green[1] <= <GND>
-green[2] <= <GND>
-green[3] <= <GND>
-blue[0] <= <GND>
-blue[1] <= <GND>
-blue[2] <= <GND>
-blue[3] <= <GND>
+hsync <= always0.DB_MAX_OUTPUT_PORT_TYPE
+vsync <= always0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
+red[0] <= red.DB_MAX_OUTPUT_PORT_TYPE
+red[1] <= red.DB_MAX_OUTPUT_PORT_TYPE
+red[2] <= red.DB_MAX_OUTPUT_PORT_TYPE
+red[3] <= red.DB_MAX_OUTPUT_PORT_TYPE
+green[0] <= green.DB_MAX_OUTPUT_PORT_TYPE
+green[1] <= green.DB_MAX_OUTPUT_PORT_TYPE
+green[2] <= green.DB_MAX_OUTPUT_PORT_TYPE
+green[3] <= green.DB_MAX_OUTPUT_PORT_TYPE
+blue[0] <= blue.DB_MAX_OUTPUT_PORT_TYPE
+blue[1] <= blue.DB_MAX_OUTPUT_PORT_TYPE
+blue[2] <= blue.DB_MAX_OUTPUT_PORT_TYPE
+blue[3] <= blue.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|keyboard_decoder:comb_5|PLL:pll
+|FinalProject|keyboard_decoder:comb_6|PLL:pll
 inclk0 => sub_wire1[0].IN1
 c0 <= altpll:altpll_component.clk
 
 
-|FinalProject|keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component
+|FinalProject|keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component
 inclk[0] => PLL_altpll:auto_generated.inclk[0]
 inclk[1] => PLL_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -218,7 +376,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|FinalProject|keyboard_decoder:comb_5|PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated
+|FinalProject|keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
@@ -228,7 +386,86 @@ inclk[0] => pll1.CLK
 inclk[1] => pll1.CLK1
 
 
-|FinalProject|add_sub:comb_6
+|FinalProject|keyboard_decoder:comb_6|witchcraft:h
+clk => vsync_clk~reg0.CLK
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+clk => count[4]~reg0.CLK
+clk => count[5]~reg0.CLK
+clk => count[6]~reg0.CLK
+clk => count[7]~reg0.CLK
+clk => count[8]~reg0.CLK
+clk => count[9]~reg0.CLK
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[5] <= count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[6] <= count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[7] <= count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[8] <= count[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[9] <= count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vsync_clk <= vsync_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|keyboard_decoder:comb_6|witchcraft:v
+clk => vsync_clk~reg0.CLK
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+clk => count[4]~reg0.CLK
+clk => count[5]~reg0.CLK
+clk => count[6]~reg0.CLK
+clk => count[7]~reg0.CLK
+clk => count[8]~reg0.CLK
+clk => count[9]~reg0.CLK
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[5] <= count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[6] <= count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[7] <= count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[8] <= count[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[9] <= count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vsync_clk <= vsync_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|keyboard_decoder:comb_6|decoder:comb_3
+data[0] => Decoder0.IN7
+data[1] => Decoder0.IN6
+data[2] => Decoder0.IN5
+data[3] => Decoder0.IN4
+data[4] => Decoder0.IN3
+data[5] => Decoder0.IN2
+data[6] => Decoder0.IN1
+data[7] => Decoder0.IN0
+q[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|keyboard_decoder:comb_6|sevenseg:comb_4
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|add_sub:comb_7
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -249,7 +486,7 @@ y[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 cout <= adder:comb_3.port4
 
 
-|FinalProject|add_sub:comb_6|adder:comb_3
+|FinalProject|add_sub:comb_7|adder:comb_3
 a[0] => Add0.IN4
 a[1] => Add0.IN3
 a[2] => Add0.IN2
@@ -266,7 +503,7 @@ s[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|mux2:comb_7
+|FinalProject|mux2:comb_8
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -285,7 +522,7 @@ y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|sevenseg:comb_8
+|FinalProject|sevenseg:comb_9
 data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
