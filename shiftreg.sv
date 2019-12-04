@@ -21,6 +21,7 @@ module shiftreg #(parameter N = 8)
 				q2 <= 0;
 				r1 <= 0;
 				r2 <= 0;
+			end
 		else if(enable) 
 			begin
 				q1 <= r1;
