@@ -25,7 +25,6 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
 		.select					(select),
 		.a							(a_but),
 		.b							(b_but)
-	
 	); 
 	//Nes Decoder
 	logic select_out;
@@ -38,7 +37,6 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
 		.select					(slct),
 		.select_key				(select_out)
 	);
-	
 	//ps/2 decoder 
 	logic clk_keyboard, ready_key, red, green, blue;
 	keyboard_decoder (
@@ -48,10 +46,8 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n,
 		.select					(select_out),
 		.red						(red),
 		.green					(green),
-		.blue						(blue),
+		.blue						(blue)
 	);
-	
-	
 	// add and subtract values						
 	add_sub #(4) (a,b,cin,s,y,cout);
 	
