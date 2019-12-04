@@ -1,6 +1,6 @@
 //Top Level
 
-module FinalProject (input logic clk, dataYellow, reset_n, botton, clk_key,
+module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 							input logic input_keyboard,
 							output logic led, motor, 
 							output logic [6:0] seg,
@@ -42,14 +42,14 @@ module FinalProject (input logic clk, dataYellow, reset_n, botton, clk_key,
 	//PS2keyboard
 	logic code;
 	PS2keyboard(
-		.resetbut				(botton),
+		.resetbut				(button),
 		.PS2data					(input_keyboard),
 		.PS2clock				(clk_key),
 		.code						(code)
 	);
 	
 	
-	
+	logic [3:0]a_b_data;
 	//ps/2 decoder 
 	keyboard_decoder (
 		.keyboard				(code),
@@ -59,7 +59,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, botton, clk_key,
 		.red						(red),
 		.green					(green),
 		.blue						(blue),
-		.q							(a)
+		.q							(a_b_data)
 	);
 	
 	
@@ -69,7 +69,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, botton, clk_key,
 	logic c_comparator2;
 	idlecounter2 (
 		.clk			(clk),
-		.reset1		(botton),
+		.reset1		(button),
 		.reset2		(c_comparator2),
 		.q				(c_idlecounter2)
 	
@@ -81,7 +81,15 @@ module FinalProject (input logic clk, dataYellow, reset_n, botton, clk_key,
 	);
 	
 
-
+	shiftreg	#(4) numbers	(
+		.clk 			(clk),
+		.reset1		(button),
+		.reset2 		(c_comparator2),
+		.d				(a_b_data),
+		.q1			(b),
+		.q2			(a)
+	
+	);
 	
 	// add and subtract values						
 	add_sub #(4) (a,b,cin,s,y,cout);

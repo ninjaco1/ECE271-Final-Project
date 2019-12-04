@@ -1,11 +1,11 @@
 module shiftreg #(parameter N = 8)
-						(input logic clk, reset1,reset2, enable, sin,
+						(input logic clk, reset1,reset2, enable,
 						input logic [N-1:0] d,
-						output logic [N-1:0] q1,q2,
-						output logic sout);
+						output logic [N-1:0] q1,q2
+						);
 						
-	//logic [15:0]r;	
-		logic [7:0] r1,r2;
+		
+	logic [N-1:0] r1,r2;
 						
 	always_ff @(posedge clk, posedge reset1)//reset1 is the button and reset 2 is the loop
 		if (reset1)
