@@ -1,7 +1,7 @@
 //Top Level
 
-module FinalProject (input logic clk, ltch, data, dataYellow, reset_n, botton, clk_key,
-							input logic [10:0] input_keyboard,
+module FinalProject (input logic clk, dataYellow, reset_n, botton, clk_key,
+							input logic input_keyboard,
 							output logic led, motor, 
 							output logic [6:0] seg,
 							output logic [3:0] red, green, blue,
@@ -58,9 +58,39 @@ module FinalProject (input logic clk, ltch, data, dataYellow, reset_n, botton, c
 		.vsync					(vsync),
 		.red						(red),
 		.green					(green),
-		.blue					(blue),
+		.blue						(blue),
 		.q							(a)
 	);
+	
+	
+	
+	//add shift register then counter to store a and b
+	logic [3:0] c_idlecounter2;
+	logic c_comparator2;
+	idlecounter2 (
+		.clk			(clk),
+		.reset1		(botton),
+		.reset2		(c_comparator2),
+		.q				(c_idlecounter2)
+	
+	);
+	
+	comparator2 (
+		.a				(c_idlecounter2),
+		.eq			(c_comparator2)
+	);
+	
+	shiftreg #(2) numbers (
+		.clk			(clk),
+		.reset
+		.load
+		.sin
+		.d
+		.q
+		.sout
+	
+	);
+	
 	// add and subtract values						
 	add_sub #(4) (a,b,cin,s,y,cout);
 	

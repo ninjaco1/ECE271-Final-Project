@@ -1,31 +1,19 @@
 |FinalProject
-clk => clk.IN1
-ltch => ~NO_FANOUT~
-data => ~NO_FANOUT~
+clk => clk.IN2
 dataYellow => dataYellow.IN1
 reset_n => reset_n.IN1
-botton => botton.IN1
+botton => botton.IN2
 clk_key => clk_key.IN2
-input_keyboard[0] => input_keyboard[0].IN1
-input_keyboard[1] => input_keyboard[1].IN1
-input_keyboard[2] => input_keyboard[2].IN1
-input_keyboard[3] => input_keyboard[3].IN1
-input_keyboard[4] => input_keyboard[4].IN1
-input_keyboard[5] => input_keyboard[5].IN1
-input_keyboard[6] => input_keyboard[6].IN1
-input_keyboard[7] => input_keyboard[7].IN1
-input_keyboard[8] => input_keyboard[8].IN1
-input_keyboard[9] => input_keyboard[9].IN1
-input_keyboard[10] => input_keyboard[10].IN1
+input_keyboard => input_keyboard.IN1
 led <= <GND>
 motor <= <GND>
-seg[0] <= sevenseg:comb_9.port1
-seg[1] <= sevenseg:comb_9.port1
-seg[2] <= sevenseg:comb_9.port1
-seg[3] <= sevenseg:comb_9.port1
-seg[4] <= sevenseg:comb_9.port1
-seg[5] <= sevenseg:comb_9.port1
-seg[6] <= sevenseg:comb_9.port1
+seg[0] <= sevenseg:comb_11.port1
+seg[1] <= sevenseg:comb_11.port1
+seg[2] <= sevenseg:comb_11.port1
+seg[3] <= sevenseg:comb_11.port1
+seg[4] <= sevenseg:comb_11.port1
+seg[5] <= sevenseg:comb_11.port1
+seg[6] <= sevenseg:comb_11.port1
 red[0] <= keyboard_decoder:comb_6.red
 red[1] <= keyboard_decoder:comb_6.red
 red[2] <= keyboard_decoder:comb_6.red
@@ -465,7 +453,34 @@ segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|add_sub:comb_7
+|FinalProject|idlecounter2:comb_7
+reset1 => q[0]~reg0.ACLR
+reset1 => q[1]~reg0.ACLR
+reset1 => q[2]~reg0.ACLR
+reset1 => q[3]~reg0.ACLR
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+reset2 => q.OUTPUTSELECT
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|comparator2:comb_8
+a[0] => LessThan0.IN8
+a[1] => LessThan0.IN7
+a[2] => LessThan0.IN6
+a[3] => LessThan0.IN5
+eq <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|add_sub:comb_9
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -486,7 +501,7 @@ y[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 cout <= adder:comb_3.port4
 
 
-|FinalProject|add_sub:comb_7|adder:comb_3
+|FinalProject|add_sub:comb_9|adder:comb_3
 a[0] => Add0.IN4
 a[1] => Add0.IN3
 a[2] => Add0.IN2
@@ -503,7 +518,7 @@ s[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|mux2:comb_8
+|FinalProject|mux2:comb_10
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -522,7 +537,7 @@ y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|sevenseg:comb_9
+|FinalProject|sevenseg:comb_11
 data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1

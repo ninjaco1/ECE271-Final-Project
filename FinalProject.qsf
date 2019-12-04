@@ -68,4 +68,5 @@ set_global_assignment -name SYSTEMVERILOG_FILE NesDecoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE PS2keyboard.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vga.sv
 set_global_assignment -name SYSTEMVERILOG_FILE decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comparator2.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
