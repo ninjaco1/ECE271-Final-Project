@@ -80,16 +80,8 @@ module FinalProject (input logic clk, dataYellow, reset_n, botton, clk_key,
 		.eq			(c_comparator2)
 	);
 	
-	shiftreg #(2) numbers (
-		.clk			(clk),
-		.reset
-		.load
-		.sin
-		.d
-		.q
-		.sout
-	
-	);
+
+
 	
 	// add and subtract values						
 	add_sub #(4) (a,b,cin,s,y,cout);
