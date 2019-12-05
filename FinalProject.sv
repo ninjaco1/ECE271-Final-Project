@@ -95,11 +95,9 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	add_sub #(4) (a,b,0,s,y,cout);
 
 	
-	
 	// choose if you want to display the sum or difference
 	mux2(s,y, slct, num_out);
 	
-	//comparator #(4) (s,y,)
 	
 	
 	// display the answer of the 7 segment display
