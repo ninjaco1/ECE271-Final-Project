@@ -2,7 +2,7 @@
 
 module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 							input logic input_keyboard,
-							output logic led, motor, 
+							output logic led, motor,note, 
 							output logic [6:0] seg,
 							output logic [3:0] red, green, blue,
 							output logic vsync, hsync);
@@ -93,8 +93,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	
 	// add and subtract values						
 	add_sub #(4) (a,b,0,s,y,cout);
-	//adder #(4)(a,b,0,s,cout);
-	//substractor #(4) (a,b,y);
+
 	
 	
 	// choose if you want to display the sum or difference
@@ -104,8 +103,16 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	
 	
 	// display the answer of the 7 segment display
-	sevenseg(num_out, seg);					
-							
+	sevenseg(num_out, seg);		
+
+	
+	//speaker
+	logic analog_signal;
+	speaker (
+		.clk					(clk),
+		.analog_signal		(analog_signal),
+		.note					(note)
+	);						
 							
 
 endmodule
