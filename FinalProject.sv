@@ -92,7 +92,9 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	);
 	
 	// add and subtract values						
-	add_sub #(4) (a,b,cin,s,y,cout);
+	add_sub #(4) (a,b,0,s,y,cout);
+	//adder #(4)(a,b,0,s,cout);
+	//substractor #(4) (a,b,y);
 	
 	
 	// choose if you want to display the sum or difference

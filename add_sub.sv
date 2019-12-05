@@ -7,11 +7,12 @@ module add_sub #(parameter N = 8)
 					output logic cout);
 
 
-	adder #(N)(a,b, cin,s, cout);
+	//adder #(N)(a,b, cin,s, cout);
 	//substractor #(N)(a,b,y);
 
-	//assign {cout, s} = a+b+cin;
-	assign y = a-b;
+	assign {cout, s} = a+b+cin;
+	always @ (*)
+		if(a != 0 & b != 0)  y <= a-b;
 
 
 endmodule
