@@ -34,12 +34,12 @@ module keyboard_decoder(input [7:0] keyboard,
 		.count (count2)
 	);
 	
-	decoder(
+	decoder decoder(
 		.data (keyboard),
 		.q (q)
 	);
 	
-	sevenseg(
+	sevenseg seven(
 		.data (q),
 		.segments (segments)
 	);

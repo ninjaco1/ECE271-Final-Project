@@ -15,7 +15,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	
 	//NES reader outputs
 	logic latchOrange, clockRed, up, down, left, right, start, select, a_but, b_but;
-	NesReader(
+	NesReader NesReader(
 		.dataYellow				(dataYellow),
 		.clock					(clk),
 		.reset_n					(reset_n),
@@ -32,7 +32,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	); 
 	//Nes Decoder
 	logic select_out;
-	NesDecoder(
+	NesDecoder NesDecoder(
 		.nes_clk					(clockRed),
 		.nes_latch				(latchOrange),
 		.a							(a_but),
@@ -43,7 +43,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	);
 	//PS2keyboard
 	logic code;
-	PS2keyboard(
+	PS2keyboard PS2keyboard(
 		.resetbut				(button),
 		.PS2data					(input_keyboard),
 		.PS2clock				(clk_key),
@@ -53,7 +53,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	
 	logic [3:0]a_b_data;
 	//ps/2 decoder 
-	keyboard_decoder (
+	keyboard_decoder keyboard_decoder(
 		.keyboard				(code),
 		.clk						(clk_key),
 		.hsync					(hsync),
@@ -69,7 +69,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	//add shift register then counter to store a and b
 	logic [3:0] c_idlecounter2;
 	logic c_comparator2;
-	idlecounter2 (
+	idlecounter2 idlecounter2(
 		.clk			(clk),
 		.reset1		(button),
 		.reset2		(c_comparator2),
@@ -77,7 +77,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	
 	);
 	
-	comparator2 (
+	comparator2 comparator2(
 		.a				(c_idlecounter2),
 		.eq			(c_comparator2)
 	);
@@ -94,28 +94,28 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	);
 	
 	// add and subtract values						
-	add_sub #(4) (a,b,0,s,y,cout);
+	add_sub #(4) add_sub(a,b,0,s,y,cout);
 
 	
 	// choose if you want to display the sum or difference
-	mux2(s,y, slct, num_out);
+	mux2 mux2(s,y, slct, num_out);
 	
 	
 	
 	// display the answer of the 7 segment display
-	sevenseg(num_out, seg);		
+	sevenseg sevenseg(num_out, seg);		
 
 	
 	//speaker
 	//logic analog_signal;
-	speaker (
+	speaker speaker(
 		.clk					(clk),
 		.analog_signal		(analog),
 		.note					(note)
 	);	
 	
 	//LED_strip pulsing at 1Hz	
-	LED_strip (
+	LED_strip LED_strip(
 		.clk					(clk),
 		.enable				(select_out),
 		.red					(ledred),

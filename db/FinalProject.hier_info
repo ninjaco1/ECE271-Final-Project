@@ -15,56 +15,56 @@ analog[6] => analog[6].IN1
 analog[7] => analog[7].IN1
 analog[8] => analog[8].IN1
 analog[9] => analog[9].IN1
-motor <= select.DB_MAX_OUTPUT_PORT_TYPE
-note <= speaker:comb_12.note
-ledred[0] <= LED_strip:comb_13.red
-ledred[1] <= LED_strip:comb_13.red
-ledred[2] <= LED_strip:comb_13.red
-ledred[3] <= LED_strip:comb_13.red
-ledred[4] <= LED_strip:comb_13.red
-ledred[5] <= LED_strip:comb_13.red
-ledred[6] <= LED_strip:comb_13.red
-ledred[7] <= LED_strip:comb_13.red
-ledgreen[0] <= LED_strip:comb_13.green
-ledgreen[1] <= LED_strip:comb_13.green
-ledgreen[2] <= LED_strip:comb_13.green
-ledgreen[3] <= LED_strip:comb_13.green
-ledgreen[4] <= LED_strip:comb_13.green
-ledgreen[5] <= LED_strip:comb_13.green
-ledgreen[6] <= LED_strip:comb_13.green
-ledgreen[7] <= LED_strip:comb_13.green
-ledblue[0] <= LED_strip:comb_13.blue
-ledblue[1] <= LED_strip:comb_13.blue
-ledblue[2] <= LED_strip:comb_13.blue
-ledblue[3] <= LED_strip:comb_13.blue
-ledblue[4] <= LED_strip:comb_13.blue
-ledblue[5] <= LED_strip:comb_13.blue
-ledblue[6] <= LED_strip:comb_13.blue
-ledblue[7] <= LED_strip:comb_13.blue
-seg[0] <= sevenseg:comb_11.port1
-seg[1] <= sevenseg:comb_11.port1
-seg[2] <= sevenseg:comb_11.port1
-seg[3] <= sevenseg:comb_11.port1
-seg[4] <= sevenseg:comb_11.port1
-seg[5] <= sevenseg:comb_11.port1
-seg[6] <= sevenseg:comb_11.port1
-red[0] <= keyboard_decoder:comb_6.red
-red[1] <= keyboard_decoder:comb_6.red
-red[2] <= keyboard_decoder:comb_6.red
-red[3] <= keyboard_decoder:comb_6.red
-green[0] <= keyboard_decoder:comb_6.green
-green[1] <= keyboard_decoder:comb_6.green
-green[2] <= keyboard_decoder:comb_6.green
-green[3] <= keyboard_decoder:comb_6.green
-blue[0] <= keyboard_decoder:comb_6.blue
-blue[1] <= keyboard_decoder:comb_6.blue
-blue[2] <= keyboard_decoder:comb_6.blue
-blue[3] <= keyboard_decoder:comb_6.blue
-vsync <= keyboard_decoder:comb_6.vsync
-hsync <= keyboard_decoder:comb_6.hsync
+motor << select.DB_MAX_OUTPUT_PORT_TYPE
+note << speaker:speaker.note
+ledred[0] << LED_strip:LED_strip.red
+ledred[1] << LED_strip:LED_strip.red
+ledred[2] << LED_strip:LED_strip.red
+ledred[3] << LED_strip:LED_strip.red
+ledred[4] << LED_strip:LED_strip.red
+ledred[5] << LED_strip:LED_strip.red
+ledred[6] << LED_strip:LED_strip.red
+ledred[7] << LED_strip:LED_strip.red
+ledgreen[0] << LED_strip:LED_strip.green
+ledgreen[1] << LED_strip:LED_strip.green
+ledgreen[2] << LED_strip:LED_strip.green
+ledgreen[3] << LED_strip:LED_strip.green
+ledgreen[4] << LED_strip:LED_strip.green
+ledgreen[5] << LED_strip:LED_strip.green
+ledgreen[6] << LED_strip:LED_strip.green
+ledgreen[7] << LED_strip:LED_strip.green
+ledblue[0] << LED_strip:LED_strip.blue
+ledblue[1] << LED_strip:LED_strip.blue
+ledblue[2] << LED_strip:LED_strip.blue
+ledblue[3] << LED_strip:LED_strip.blue
+ledblue[4] << LED_strip:LED_strip.blue
+ledblue[5] << LED_strip:LED_strip.blue
+ledblue[6] << LED_strip:LED_strip.blue
+ledblue[7] << LED_strip:LED_strip.blue
+seg[0] << sevenseg:sevenseg.port1
+seg[1] << sevenseg:sevenseg.port1
+seg[2] << sevenseg:sevenseg.port1
+seg[3] << sevenseg:sevenseg.port1
+seg[4] << sevenseg:sevenseg.port1
+seg[5] << sevenseg:sevenseg.port1
+seg[6] << sevenseg:sevenseg.port1
+red[0] << keyboard_decoder:keyboard_decoder.red
+red[1] << keyboard_decoder:keyboard_decoder.red
+red[2] << keyboard_decoder:keyboard_decoder.red
+red[3] << keyboard_decoder:keyboard_decoder.red
+green[0] << keyboard_decoder:keyboard_decoder.green
+green[1] << keyboard_decoder:keyboard_decoder.green
+green[2] << keyboard_decoder:keyboard_decoder.green
+green[3] << keyboard_decoder:keyboard_decoder.green
+blue[0] << keyboard_decoder:keyboard_decoder.blue
+blue[1] << keyboard_decoder:keyboard_decoder.blue
+blue[2] << keyboard_decoder:keyboard_decoder.blue
+blue[3] << keyboard_decoder:keyboard_decoder.blue
+vsync << keyboard_decoder:keyboard_decoder.vsync
+hsync << keyboard_decoder:keyboard_decoder.hsync
 
 
-|FinalProject|NesReader:comb_3
+|FinalProject|NesReader:NesReader
 dataYellow => dataYellow.IN1
 clock => clock.IN1
 reset_n => reset_n.IN2
@@ -80,7 +80,7 @@ a <= NesDataReceiverDecoder:matt_i4.readButtons
 b <= NesDataReceiverDecoder:matt_i4.readButtons
 
 
-|FinalProject|NesReader:comb_3|Counter4:matt_i1
+|FinalProject|NesReader:NesReader|Counter4:matt_i1
 clk => count[0]~reg0.CLK
 clk => count[1]~reg0.CLK
 clk => count[2]~reg0.CLK
@@ -95,7 +95,7 @@ count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|NesReader:comb_3|NesClockStateDecoder:matt_i2
+|FinalProject|NesReader:NesReader|NesClockStateDecoder:matt_i2
 controllerState[0] => Decoder0.IN3
 controllerState[1] => Decoder0.IN2
 controllerState[2] => Decoder0.IN1
@@ -103,7 +103,7 @@ controllerState[3] => Decoder0.IN0
 nesClock <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|NesReader:comb_3|NesLatchStateDecoder:matt_i3
+|FinalProject|NesReader:NesReader|NesLatchStateDecoder:matt_i3
 controllerState[0] => Equal0.IN7
 controllerState[1] => Equal0.IN6
 controllerState[2] => Equal0.IN5
@@ -111,7 +111,7 @@ controllerState[3] => Equal0.IN4
 nesLatch <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|NesReader:comb_3|NesDataReceiverDecoder:matt_i4
+|FinalProject|NesReader:NesReader|NesDataReceiverDecoder:matt_i4
 dataYellow => readButtons[0]~reg0.DATAIN
 dataYellow => readButtons[7]~reg0.DATAIN
 dataYellow => readButtons[6]~reg0.DATAIN
@@ -150,7 +150,7 @@ readButtons[6] <= readButtons[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readButtons[7] <= readButtons[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|NesDecoder:comb_4
+|FinalProject|NesDecoder:NesDecoder
 nes_clk => ~NO_FANOUT~
 nes_latch => ~NO_FANOUT~
 a => select.IN0
@@ -162,7 +162,7 @@ select <= select$latch.DB_MAX_OUTPUT_PORT_TYPE
 select_key <= <VCC>
 
 
-|FinalProject|PS2keyboard:comb_5
+|FinalProject|PS2keyboard:PS2keyboard
 resetbut => resetbut.IN2
 PS2data => PS2data.IN1
 PS2clock => PS2clock.IN3
@@ -176,7 +176,7 @@ code[6] <= shiftregistertotal:shiftregistertotal.q
 code[7] <= shiftregistertotal:shiftregistertotal.q
 
 
-|FinalProject|PS2keyboard:comb_5|shiftregister11:shiftregister11
+|FinalProject|PS2keyboard:PS2keyboard|shiftregister11:shiftregister11
 clk => q[0]~reg0.CLK
 clk => q[1]~reg0.CLK
 clk => q[2]~reg0.CLK
@@ -235,7 +235,7 @@ q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|PS2keyboard:comb_5|idlecounter2:idlecounter2
+|FinalProject|PS2keyboard:PS2keyboard|idlecounter2:idlecounter2
 reset1 => q[0]~reg0.ACLR
 reset1 => q[1]~reg0.ACLR
 reset1 => q[2]~reg0.ACLR
@@ -254,7 +254,7 @@ q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|PS2keyboard:comb_5|comparator11:comparator11
+|FinalProject|PS2keyboard:PS2keyboard|comparator11:comparator11
 a[0] => LessThan0.IN8
 a[1] => LessThan0.IN7
 a[2] => LessThan0.IN6
@@ -262,7 +262,7 @@ a[3] => LessThan0.IN5
 eq <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|PS2keyboard:comb_5|shiftregistertotal:shiftregistertotal
+|FinalProject|PS2keyboard:PS2keyboard|shiftregistertotal:shiftregistertotal
 d[0] => q.DATAB
 d[1] => q.DATAB
 d[2] => q.DATAB
@@ -297,7 +297,7 @@ q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|keyboard_decoder:comb_6
+|FinalProject|keyboard_decoder:keyboard_decoder
 keyboard[0] => keyboard[0].IN1
 keyboard[1] => keyboard[1].IN1
 keyboard[2] => keyboard[2].IN1
@@ -333,12 +333,12 @@ blue[2] <= blue.DB_MAX_OUTPUT_PORT_TYPE
 blue[3] <= blue.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|keyboard_decoder:comb_6|PLL:pll
+|FinalProject|keyboard_decoder:keyboard_decoder|PLL:pll
 inclk0 => sub_wire1[0].IN1
 c0 <= altpll:altpll_component.clk
 
 
-|FinalProject|keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component
+|FinalProject|keyboard_decoder:keyboard_decoder|PLL:pll|altpll:altpll_component
 inclk[0] => PLL_altpll:auto_generated.inclk[0]
 inclk[1] => PLL_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -398,7 +398,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|FinalProject|keyboard_decoder:comb_6|PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated
+|FinalProject|keyboard_decoder:keyboard_decoder|PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
@@ -408,7 +408,7 @@ inclk[0] => pll1.CLK
 inclk[1] => pll1.CLK1
 
 
-|FinalProject|keyboard_decoder:comb_6|witchcraft:h
+|FinalProject|keyboard_decoder:keyboard_decoder|witchcraft:h
 clk => vsync_clk~reg0.CLK
 clk => count[0]~reg0.CLK
 clk => count[1]~reg0.CLK
@@ -433,7 +433,7 @@ count[9] <= count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vsync_clk <= vsync_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|keyboard_decoder:comb_6|witchcraft:v
+|FinalProject|keyboard_decoder:keyboard_decoder|witchcraft:v
 clk => vsync_clk~reg0.CLK
 clk => count[0]~reg0.CLK
 clk => count[1]~reg0.CLK
@@ -458,7 +458,7 @@ count[9] <= count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vsync_clk <= vsync_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|keyboard_decoder:comb_6|decoder:comb_3
+|FinalProject|keyboard_decoder:keyboard_decoder|decoder:decoder
 data[0] => Decoder0.IN7
 data[1] => Decoder0.IN6
 data[2] => Decoder0.IN5
@@ -473,7 +473,7 @@ q[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 q[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|keyboard_decoder:comb_6|sevenseg:comb_4
+|FinalProject|keyboard_decoder:keyboard_decoder|sevenseg:seven
 data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
@@ -487,7 +487,7 @@ segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|idlecounter2:comb_7
+|FinalProject|idlecounter2:idlecounter2
 reset1 => q[0]~reg0.ACLR
 reset1 => q[1]~reg0.ACLR
 reset1 => q[2]~reg0.ACLR
@@ -506,7 +506,7 @@ q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|comparator2:comb_8
+|FinalProject|comparator2:comparator2
 a[0] => LessThan0.IN8
 a[1] => LessThan0.IN7
 a[2] => LessThan0.IN6
@@ -593,7 +593,7 @@ q2[2] <= q2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q2[3] <= q2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|add_sub:comb_9
+|FinalProject|add_sub:add_sub
 a[0] => Add0.IN4
 a[0] => Add2.IN8
 a[0] => Equal0.IN31
@@ -630,7 +630,7 @@ y[3] <= y[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
 cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|mux2:comb_10
+|FinalProject|mux2:mux2
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -649,7 +649,7 @@ y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|sevenseg:comb_11
+|FinalProject|sevenseg:sevenseg
 data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
@@ -663,7 +663,7 @@ segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|speaker:comb_12
+|FinalProject|speaker:speaker
 clk => clk.IN1
 analog_signal[0] => LessThan0.IN20
 analog_signal[0] => LessThan1.IN20
@@ -688,13 +688,13 @@ analog_signal[9] => LessThan1.IN11
 note <= note.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|speaker:comb_12|clk_sound:sound
+|FinalProject|speaker:speaker|clk_sound:sound
 inclk0 => sub_wire1[0].IN1
 c0 <= altpll:altpll_component.clk
 c1 <= altpll:altpll_component.clk
 
 
-|FinalProject|speaker:comb_12|clk_sound:sound|altpll:altpll_component
+|FinalProject|speaker:speaker|clk_sound:sound|altpll:altpll_component
 inclk[0] => clk_sound_altpll:auto_generated.inclk[0]
 inclk[1] => clk_sound_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -754,7 +754,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|FinalProject|speaker:comb_12|clk_sound:sound|altpll:altpll_component|clk_sound_altpll:auto_generated
+|FinalProject|speaker:speaker|clk_sound:sound|altpll:altpll_component|clk_sound_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
@@ -764,7 +764,7 @@ inclk[0] => pll1.CLK
 inclk[1] => pll1.CLK1
 
 
-|FinalProject|LED_strip:comb_13
+|FinalProject|LED_strip:LED_strip
 clk => clk.IN1
 enable => ~NO_FANOUT~
 red[0] <= <VCC>
@@ -793,12 +793,12 @@ blue[6] <= <VCC>
 blue[7] <= <VCC>
 
 
-|FinalProject|LED_strip:comb_13|clk_LED:comb_3
+|FinalProject|LED_strip:LED_strip|clk_LED:clk_LED
 inclk0 => sub_wire1[0].IN1
 c0 <= altpll:altpll_component.clk
 
 
-|FinalProject|LED_strip:comb_13|clk_LED:comb_3|altpll:altpll_component
+|FinalProject|LED_strip:LED_strip|clk_LED:clk_LED|altpll:altpll_component
 inclk[0] => clk_LED_altpll:auto_generated.inclk[0]
 inclk[1] => clk_LED_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -858,7 +858,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|FinalProject|LED_strip:comb_13|clk_LED:comb_3|altpll:altpll_component|clk_LED_altpll:auto_generated
+|FinalProject|LED_strip:LED_strip|clk_LED:clk_LED|altpll:altpll_component|clk_LED_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2

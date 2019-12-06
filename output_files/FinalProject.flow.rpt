@@ -1,5 +1,5 @@
 Flow report for FinalProject
-Thu Dec 05 18:04:12 2019
+Thu Dec 05 19:21:57 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Dec 05 18:04:12 2019       ;
+; Flow Status                        ; Successful - Thu Dec 05 19:21:57 2019       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; FinalProject                                ;
 ; Top-level Entity Name              ; FinalProject                                ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/05/2019 18:03:46 ;
+; Start date & time ; 12/05/2019 19:21:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FinalProject        ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 30905334161387.157559782513888         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 30905334161387.157560249619724         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim (SystemVerilog)               ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -103,8 +103,8 @@ refer to the applicable agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:29     ; 1.0                     ; 4728 MB             ; 00:01:01                           ;
-; Total                  ; 00:00:29     ; --                      ; --                  ; 00:01:01                           ;
+; Analysis & Elaboration ; 00:00:22     ; 1.0                     ; 4728 MB             ; 00:00:51                           ;
+; Total                  ; 00:00:22     ; --                      ; --                  ; 00:00:51                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

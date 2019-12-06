@@ -3,7 +3,7 @@ module LED_strip (input logic clk, enable,
 						output logic [7:0] red, green, blue);
 						
 	logic clk1;					
-	clk_LED(
+	clk_LED clk_LED(
 		.inclk0 			(clk),
 		.c0				(clk1)
 	);
