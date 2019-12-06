@@ -1,6 +1,6 @@
 //Top Level
 
-module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
+module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key, nesclk,vcc,
 							input logic input_keyboard,
 							input logic [9:0] analog,
 							output logic motor,note, 
@@ -11,13 +11,13 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 							
 	logic [4:0] a,b,s,y, num_out;
 	logic cin, cout, slct;
-	
+	//assign motor = 0;
 	
 	//NES reader outputs
-	logic latchOrange, clockRed, up, down, left, right, start, select, a_but, b_but;
+	logic clockRed, up, down, left, right, start, select, a_but, b_but,latchOrange;
 	NesReader NesReader(
 		.dataYellow				(dataYellow),
-		.clock					(clk),
+		.clock					(nesclk),
 		.reset_n					(reset_n),
 		.latchOrange			(latchOrange),
 		.clockRed				(clockRed),
@@ -33,13 +33,14 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	//Nes Decoder
 	logic select_out;
 	NesDecoder NesDecoder(
-		.nes_clk					(clockRed),
-		.nes_latch				(latchOrange),
+		.vcc						(vcc),
+		.latchOrange			(latchOrange),
 		.a							(a_but),
 		.b							(b_but),
 		.select_button			(select),
-		.select					(slct),
-		.select_key				(select_out)
+		.mux_select				(slct),
+		.select_out				(select_out)
+		
 	);
 	//PS2keyboard
 	logic code;
@@ -101,7 +102,7 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	mux2 mux2(s,y, slct, num_out);
 	
 	
-	
+	//countertest(a_but, b_but,button, num_out);
 	// display the answer of the 7 segment display
 	sevenseg sevenseg(num_out, seg);		
 
@@ -111,7 +112,8 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 	speaker speaker(
 		.clk					(clk),
 		.analog_signal		(analog),
-		.note					(note)
+		.note					(note),
+		.button				(button)
 	);	
 	
 	//LED_strip pulsing at 1Hz	
@@ -123,7 +125,24 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 		.blue					(ledblue)
 	);
 	
-	assign motor = select;
+	//logic tester=1;
+	
+	
+	assign motor =select_out;
+	
+	
+	
 
+endmodule
+
+
+module countertest(
+  input logic a, b, reset_n,
+  output logic [3:0] count);
+
+  always_ff @ (*)//(negedge a, negedge b, negedge reset_n)
+    if(!reset_n) count <= 4'b0;
+	 else if (b) count <= count - 1;
+    else if (a) count <= count + 1;
 endmodule
 				
