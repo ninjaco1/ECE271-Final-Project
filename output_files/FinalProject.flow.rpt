@@ -1,5 +1,5 @@
 Flow report for FinalProject
-Wed Dec 04 22:08:12 2019
+Thu Dec 05 18:04:12 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Dec 04 22:08:12 2019       ;
+; Flow Status                        ; Successful - Thu Dec 05 18:04:12 2019       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; FinalProject                                ;
 ; Top-level Entity Name              ; FinalProject                                ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/04/2019 22:08:03 ;
+; Start date & time ; 12/05/2019 18:03:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FinalProject        ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 30905334161387.157552608216024         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 30905334161387.157559782513888         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim (SystemVerilog)               ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -87,6 +87,10 @@ refer to the applicable agreement for further details.
 ; MISC_FILE                           ; clk_sound_inst.v                       ; --            ; --          ; --             ;
 ; MISC_FILE                           ; clk_sound_bb.v                         ; --            ; --          ; --             ;
 ; MISC_FILE                           ; clk_sound.ppf                          ; --            ; --          ; --             ;
+; MISC_FILE                           ; clk_LED.bsf                            ; --            ; --          ; --             ;
+; MISC_FILE                           ; clk_LED_inst.v                         ; --            ; --          ; --             ;
+; MISC_FILE                           ; clk_LED_bb.v                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; clk_LED.ppf                            ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
@@ -99,8 +103,8 @@ refer to the applicable agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:10     ; 1.0                     ; 4731 MB             ; 00:00:22                           ;
-; Total                  ; 00:00:10     ; --                      ; --                  ; 00:00:22                           ;
+; Analysis & Elaboration ; 00:00:29     ; 1.0                     ; 4728 MB             ; 00:01:01                           ;
+; Total                  ; 00:00:29     ; --                      ; --                  ; 00:01:01                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

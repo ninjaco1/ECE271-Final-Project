@@ -9,6 +9,8 @@ module NesDecoder (input logic nes_clk, nes_latch, a, b, select_button,
 	
 	always @ (nes_latch)
 		begin
+			if(select_button)
+				select_key <=1;
 			if(a) 
 				select <= 0;// to add
 			else if (b)

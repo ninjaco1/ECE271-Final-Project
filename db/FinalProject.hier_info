@@ -1,13 +1,46 @@
 |FinalProject
-clk => clk.IN4
+clk => clk.IN5
 dataYellow => dataYellow.IN1
 reset_n => reset_n.IN1
 button => button.IN3
 clk_key => clk_key.IN2
 input_keyboard => input_keyboard.IN1
-led <= <GND>
-motor <= <GND>
+analog[0] => analog[0].IN1
+analog[1] => analog[1].IN1
+analog[2] => analog[2].IN1
+analog[3] => analog[3].IN1
+analog[4] => analog[4].IN1
+analog[5] => analog[5].IN1
+analog[6] => analog[6].IN1
+analog[7] => analog[7].IN1
+analog[8] => analog[8].IN1
+analog[9] => analog[9].IN1
+motor <= select.DB_MAX_OUTPUT_PORT_TYPE
 note <= speaker:comb_12.note
+ledred[0] <= LED_strip:comb_13.red
+ledred[1] <= LED_strip:comb_13.red
+ledred[2] <= LED_strip:comb_13.red
+ledred[3] <= LED_strip:comb_13.red
+ledred[4] <= LED_strip:comb_13.red
+ledred[5] <= LED_strip:comb_13.red
+ledred[6] <= LED_strip:comb_13.red
+ledred[7] <= LED_strip:comb_13.red
+ledgreen[0] <= LED_strip:comb_13.green
+ledgreen[1] <= LED_strip:comb_13.green
+ledgreen[2] <= LED_strip:comb_13.green
+ledgreen[3] <= LED_strip:comb_13.green
+ledgreen[4] <= LED_strip:comb_13.green
+ledgreen[5] <= LED_strip:comb_13.green
+ledgreen[6] <= LED_strip:comb_13.green
+ledgreen[7] <= LED_strip:comb_13.green
+ledblue[0] <= LED_strip:comb_13.blue
+ledblue[1] <= LED_strip:comb_13.blue
+ledblue[2] <= LED_strip:comb_13.blue
+ledblue[3] <= LED_strip:comb_13.blue
+ledblue[4] <= LED_strip:comb_13.blue
+ledblue[5] <= LED_strip:comb_13.blue
+ledblue[6] <= LED_strip:comb_13.blue
+ledblue[7] <= LED_strip:comb_13.blue
 seg[0] <= sevenseg:comb_11.port1
 seg[1] <= sevenseg:comb_11.port1
 seg[2] <= sevenseg:comb_11.port1
@@ -126,7 +159,7 @@ a => comb.IN1
 b => select.IN1
 select_button => ~NO_FANOUT~
 select <= select$latch.DB_MAX_OUTPUT_PORT_TYPE
-select_key <= <GND>
+select_key <= <VCC>
 
 
 |FinalProject|PS2keyboard:comb_5
@@ -655,13 +688,13 @@ analog_signal[9] => LessThan1.IN11
 note <= note.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FinalProject|speaker:comb_12|clk_sound:comb_3
+|FinalProject|speaker:comb_12|clk_sound:sound
 inclk0 => sub_wire1[0].IN1
 c0 <= altpll:altpll_component.clk
 c1 <= altpll:altpll_component.clk
 
 
-|FinalProject|speaker:comb_12|clk_sound:comb_3|altpll:altpll_component
+|FinalProject|speaker:comb_12|clk_sound:sound|altpll:altpll_component
 inclk[0] => clk_sound_altpll:auto_generated.inclk[0]
 inclk[1] => clk_sound_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -721,7 +754,111 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|FinalProject|speaker:comb_12|clk_sound:comb_3|altpll:altpll_component|clk_sound_altpll:auto_generated
+|FinalProject|speaker:comb_12|clk_sound:sound|altpll:altpll_component|clk_sound_altpll:auto_generated
+clk[0] <= pll1.CLK
+clk[1] <= pll1.CLK1
+clk[2] <= pll1.CLK2
+clk[3] <= pll1.CLK3
+clk[4] <= pll1.CLK4
+inclk[0] => pll1.CLK
+inclk[1] => pll1.CLK1
+
+
+|FinalProject|LED_strip:comb_13
+clk => clk.IN1
+enable => ~NO_FANOUT~
+red[0] <= <VCC>
+red[1] <= <VCC>
+red[2] <= <VCC>
+red[3] <= <VCC>
+red[4] <= <VCC>
+red[5] <= <VCC>
+red[6] <= <VCC>
+red[7] <= <VCC>
+green[0] <= <VCC>
+green[1] <= <VCC>
+green[2] <= <VCC>
+green[3] <= <VCC>
+green[4] <= <VCC>
+green[5] <= <VCC>
+green[6] <= <VCC>
+green[7] <= <VCC>
+blue[0] <= <VCC>
+blue[1] <= <VCC>
+blue[2] <= <VCC>
+blue[3] <= <VCC>
+blue[4] <= <VCC>
+blue[5] <= <VCC>
+blue[6] <= <VCC>
+blue[7] <= <VCC>
+
+
+|FinalProject|LED_strip:comb_13|clk_LED:comb_3
+inclk0 => sub_wire1[0].IN1
+c0 <= altpll:altpll_component.clk
+
+
+|FinalProject|LED_strip:comb_13|clk_LED:comb_3|altpll:altpll_component
+inclk[0] => clk_LED_altpll:auto_generated.inclk[0]
+inclk[1] => clk_LED_altpll:auto_generated.inclk[1]
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
+clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
+clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
+clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= <GND>
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= <GND>
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|FinalProject|LED_strip:comb_13|clk_LED:comb_3|altpll:altpll_component|clk_LED_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2

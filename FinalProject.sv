@@ -2,7 +2,9 @@
 
 module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 							input logic input_keyboard,
-							output logic led, motor,note, 
+							input logic [9:0] analog,
+							output logic motor,note, 
+							output logic [7:0] ledred, ledgreen, ledblue,
 							output logic [6:0] seg,
 							output logic [3:0] red, green, blue,
 							output logic vsync, hsync);
@@ -105,13 +107,23 @@ module FinalProject (input logic clk, dataYellow, reset_n, button, clk_key,
 
 	
 	//speaker
-	logic analog_signal;
+	//logic analog_signal;
 	speaker (
 		.clk					(clk),
-		.analog_signal		(analog_signal),
+		.analog_signal		(analog),
 		.note					(note)
-	);						
-							
+	);	
+	
+	//LED_strip pulsing at 1Hz	
+	LED_strip (
+		.clk					(clk),
+		.enable				(select_out),
+		.red					(ledred),
+		.green				(ledgreen),
+		.blue					(ledblue)
+	);
+	
+	assign motor = select;
 
 endmodule
 				
